@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.pouyadr.messenger"
+    package="com.finalsoft.netgram"
     android:installLocation="auto">
 
     <supports-screens
@@ -60,16 +60,16 @@
 
     <!-- <uses-permission android:name="android.permission.CAMERA" /> -->
     <application
-        android:name="org.pouyadr.messenger.ApplicationLoader"
+        android:name="com.finalsoft.netgram.ApplicationLoader"
         android:allowBackup="false"
         android:hardwareAccelerated="@bool/useHardwareAcceleration"
         android:icon="@drawable/ic_launcher"
         android:label="@string/AppName"
         android:largeHeap="true"
-        android:manageSpaceActivity="org.pouyadr.ui.ManageSpaceActivity"
+        android:manageSpaceActivity="com.finalsoft.ui.ManageSpaceActivity"
         android:theme="@style/Theme.TMessages.Start">
         <activity
-            android:name="org.pouyadr.ui.LaunchActivity"
+            android:name="com.finalsoft.ui.LaunchActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:hardwareAccelerated="@bool/useHardwareAcceleration"
             android:launchMode="singleTask"
@@ -128,7 +128,7 @@
 
                 <category android:name="android.intent.category.DEFAULT" />
 
-                <data android:mimeType="vnd.android.cursor.item/vnd.org.pouyadr.messenger.android.profile" />
+                <data android:mimeType="vnd.android.cursor.item/vnd.com.finalsoft.netgram.android.profile" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -165,20 +165,20 @@
                 android:value=".TgChooserTargetService" />
         </activity>
         <activity
-            android:name="org.pouyadr.ui.ManageSpaceActivity"
+            android:name="com.finalsoft.ui.ManageSpaceActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:hardwareAccelerated="@bool/useHardwareAcceleration"
             android:launchMode="singleTask"
             android:windowSoftInputMode="adjustPan"></activity>
         <activity
-            android:name="org.pouyadr.ui.IntroActivity"
+            android:name="com.finalsoft.ui.IntroActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"></activity>
         <activity
-            android:name="org.pouyadr.messenger.OpenChatReceiver"
+            android:name="com.finalsoft.netgram.OpenChatReceiver"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:exported="true"></activity>
         <activity
-            android:name="org.pouyadr.ui.PopupNotificationActivity"
+            android:name="com.finalsoft.netgram.PopupNotificationActivity"
             android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:excludeFromRecents="true"
             android:launchMode="singleTask"
@@ -186,36 +186,36 @@
             android:theme="@style/Theme.TMessages.PopupNotification"
             android:windowSoftInputMode="adjustResize|stateHidden"></activity>
         <activity
-            android:name="org.pouyadr.Pouya.Activity.SelectColorActivity"
+            android:name="com.finalsoft.netgram.Activity.SelectColorActivity"
             android:theme="@style/Theme.AppCompat.Light.Dialog"></activity>
 
         <receiver
-            android:name="org.pouyadr.messenger.AutoMessageHeardReceiver"
+            android:name="com.finalsoft.netgram.AutoMessageHeardReceiver"
             android:exported="false">
             <intent-filter>
-                <action android:name="org.pouyadr.messenger.ACTION_MESSAGE_HEARD" />
+                <action android:name="com.finalsoft.netgram.ACTION_MESSAGE_HEARD" />
             </intent-filter>
         </receiver>
         <receiver
-            android:name="org.pouyadr.messenger.AutoMessageReplyReceiver"
+            android:name="com.finalsoft.netgram.AutoMessageReplyReceiver"
             android:exported="false">
             <intent-filter>
-                <action android:name="org.pouyadr.messenger.ACTION_MESSAGE_REPLY" />
+                <action android:name="com.finalsoft.netgram.ACTION_MESSAGE_REPLY" />
             </intent-filter>
         </receiver>
-        <receiver android:name="org.pouyadr.messenger.CallReceiver">
+        <receiver android:name="com.finalsoft.netgram.CallReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.PHONE_STATE" />
             </intent-filter>
         </receiver>
-        <receiver android:name="org.pouyadr.messenger.SmsListener">
+        <receiver android:name="com.finalsoft.netgram.SmsListener">
             <intent-filter>
                 <action android:name="android.provider.Telephony.SMS_RECEIVED" />
             </intent-filter>
         </receiver>
 
         <service
-            android:name="org.pouyadr.messenger.AuthenticatorService"
+            android:name="com.finalsoft.netgram.AuthenticatorService"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.accounts.AccountAuthenticator" />
@@ -226,7 +226,7 @@
                 android:resource="@xml/auth" />
         </service>
         <service
-            android:name="org.pouyadr.messenger.ContactsSyncAdapterService"
+            android:name="com.finalsoft.netgram.ContactsSyncAdapterService"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.content.SyncAdapter" />
@@ -240,7 +240,7 @@
                 android:resource="@xml/contacts" />
         </service>
         <service
-            android:name="org.pouyadr.messenger.TgChooserTargetService"
+            android:name="com.finalsoft.netgram.TgChooserTargetService"
             android:label="@string/AppName"
             android:permission="android.permission.BIND_CHOOSER_TARGET_SERVICE">
             <intent-filter>
@@ -248,53 +248,53 @@
             </intent-filter>
         </service>
         <service
-            android:name="org.pouyadr.messenger.NotificationsService"
+            android:name="com.finalsoft.netgram.NotificationsService"
             android:enabled="true" />
         <service
-            android:name="org.pouyadr.messenger.NotificationRepeat"
+            android:name="com.finalsoft.netgram.NotificationRepeat"
             android:exported="false" />
         <service
-            android:name="org.pouyadr.messenger.ClearCacheService"
+            android:name="com.finalsoft.netgram.ClearCacheService"
             android:exported="false" />
         <service
-            android:name="org.pouyadr.messenger.VideoEncodingService"
+            android:name="com.finalsoft.netgram.VideoEncodingService"
             android:enabled="true" />
         <service
-            android:name="org.pouyadr.messenger.MusicPlayerService"
+            android:name="com.finalsoft.netgram.MusicPlayerService"
             android:enabled="true"
             android:exported="true" />
         <service
-            android:name="org.pouyadr.messenger.MusicBrowserService"
+            android:name="com.finalsoft.netgram.MusicBrowserService"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.media.browse.MediaBrowserService" />
             </intent-filter>
         </service>
 
-        <receiver android:name="org.pouyadr.messenger.MusicPlayerReceiver">
+        <receiver android:name="com.finalsoft.netgram.MusicPlayerReceiver">
             <intent-filter>
-                <action android:name="org.pouyadr.android.musicplayer.close" />
-                <action android:name="org.pouyadr.android.musicplayer.pause" />
-                <action android:name="org.pouyadr.android.musicplayer.next" />
-                <action android:name="org.pouyadr.android.musicplayer.play" />
-                <action android:name="org.pouyadr.android.musicplayer.previous" />
+                <action android:name="com.finalsoft.netgram.musicplayer.close" />
+                <action android:name="com.finalsoft.netgram.musicplayer.pause" />
+                <action android:name="com.finalsoft.netgram.musicplayer.next" />
+                <action android:name="com.finalsoft.netgram.musicplayer.play" />
+                <action android:name="com.finalsoft.netgram.musicplayer.previous" />
                 <action android:name="android.intent.action.MEDIA_BUTTON" />
                 <action android:name="android.media.AUDIO_BECOMING_NOISY" />
             </intent-filter>
         </receiver>
         <receiver
-            android:name="org.pouyadr.messenger.AppStartReceiver"
+            android:name="com.finalsoft.netgramAppStartReceiver"
             android:enabled="true">
             <intent-filter>
-                <action android:name="org.pouyadr.start" />
+                <action android:name="com.finalsoft.netgram.start" />
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
         <receiver
-            android:name="org.pouyadr.messenger.WearReplyReceiver"
+            android:name="com.finalsoft.netgram.WearReplyReceiver"
             android:enabled="true" />
         <receiver
-            android:name="org.pouyadr.messenger.ShareBroadcastReceiver"
+            android:name="com.finalsoft.netgram.ShareBroadcastReceiver"
             android:enabled="true" />
 
         <uses-library
@@ -323,7 +323,7 @@
             android:name="com.google.android.gms.car.application"
             android:resource="@xml/automotive_app_desc" />
 
-        <activity android:name="org.pouyadr.ui.about"
+        <activity android:name="com.finalsoft.netgram.ui.about"
             android:theme="@style/Theme.AppCompat.Light">
         </activity>
     </application>
